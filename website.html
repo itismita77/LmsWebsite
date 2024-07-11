@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atiit Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-brand img {
+            height: 40px;
+        }
+        .hero-section {
+            padding: 50px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+        .hero-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .hero-section h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        .domain-buttons button {
+            margin: 5px;
+        }
+        .stats-section {
+            padding: 20px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .stats-section div {
+            margin: 20px 0;
+        }
+        .partners img {
+            max-height: 50px;
+            margin: 20px;
+        }
+        .stats-section-wrapper {
+            border: 2px solid #dee2e6;
+            padding: 20px;
+            background-color: #f8f9fa;
+            
+        }
+        .hero-content {
+            text-align: left;
+        }
+        .hero-content h1 {
+            font-size: 2.5rem;
+            color: #343a40;
+        }
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .dropdown-select {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            appearance: none;
+        }
+        .carousel-item img {
+            max-height: 300px;
+            object-fit: cover;
+        }
+        .program-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .program-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .program-card h5 {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .custom-heading {
+            color: #FF4081; /* Custom color for "Ki Socho" */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .header .highlight {
+            color: #d9534f;
+        }
+
+        .statistics {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        .stat h2 {
+            font-size: 1.5em;
+            color: #d9534f;
+        }
+
+        .stat p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .journey {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .journey .before, .journey .after {
+            text-align: center;
+        }
+
+        .journey .logo img {
+            max-width: 100px;
+        }
+
+        .journey .upgrad {
+            text-align: center;
+            position: relative;
+        }
+
+        .journey .upgrad img {
+            max-width: 100px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .journey .upgrad p {
+            font-size: 1.5em;
+            color: #5cb85c;
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <div class="container-fluid d-flex justify-content-center align-items-center">
+            <a class="navbar-brand" href="#"><img src="logo.jpeg" alt="Logo" height="40px" width="40px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#" style="color: #ced4da;">Refer and earn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: #ced4da;">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: #ced4da;">Study Abroad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: #ced4da;">Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: #ced4da;">Free</a>
+                    </li>
+                </ul>
+                <a class="btn btn-primary" href="#">Get started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container hero-section">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="officeimage.jpeg" alt="office image">
+            </div>
+            <div class="col-md-6 hero-content">
+                <h1>500+ Courses.<br>50+ Specialisations.</h1>
+                <p>Upskill and Transform Your Career!</p>
+                <div>
+                    <input class="dropdown-select" type="text" placeholder="Select your domain">
+                </div>
+                <div class="mt-3">
+                    <input class="dropdown-select" type="text" placeholder="Select your highest qualification">
+                </div>
+                <button class="btn btn-danger mt-3">Explore Courses</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="container stats-section-wrapper">
+        <div class="row stats-section">
+            <div class="col-md-4 col-6">
+                <h3>10 Million+</h3>
+                <p>Learners Have Trusted Us</p>
+            </div>
+            <div class="col-md-4 col-6">
+                <h3>50%</h3>
+                <p>Average Salary Hike</p>
+            </div>
+            <div class="col-md-4 col-12 mt-3 mt-md-0">
+                <h3>83%</h3>
+                <p>Happy with Outcome</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partners Section -->
+    <div class="container text-center">
+        <h3>Our Knowledge Partners</h3>
+        <div class="row justify-content-center">
+            <div class="col-4 col-md-2"><img src="https://uploads.vw-mms.de/system/production/images/vwn/030/145/images/7a0d84d3b718c9a621100e43e581278433114c82/DB2019AL01950_web_1600.jpg?1649155356" alt="Partner 1" class="img-fluid"></div>
+            <div class="col-4 col-md-2"><img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/01125859/1286.png" alt="Partner 2" class="img-fluid"></div>
+            <div class="col-4 col-md-2"><img src="https://i.pinimg.com/736x/c0/e5/8a/c0e58a8822f16eedf09fa0a29d57ccc0.jpg" alt="Partner 3" class="img-fluid"></div>
+            <div class="col-4 col-md-2"><img src="https://img.freepik.com/free-vector/colorful-bird-illustration-gradient_343694-1741.jpg?size=338&ext=jpg&ga=GA1.1.1141335507.1719187200&semt=ais_user" alt="Partner 4" class="img-fluid"></div>
+            <div class="col-4 col-md-2"><img src="https://img.freepik.com/free-vector/branding-identity-corporate-c-logo-vector-design-template_460848-13932.jpg?size=626&ext=jpg&ga=GA1.1.1518270500.1717372800&semt=ais_user" alt="Partner 7" class="img-fluid"></div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Aage <span class="custom-heading">Ki Socho</span></h1>
+        <p class="text-center">Discover in-demand courses across industries</p>
+        <div id="programsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <div class="program-card">
+                                <img src="https://your-image-source-url.com/dba-digital-leadership.jpg" alt="DBA in Digital Leadership">
+                                <h5>DBA in Digital Leadership</h5>
+                                <p>Golden Gate University</p>
+                                <a href="#" class="btn btn-danger">View Program</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="program-card">
+                                <img src="https://your-image-source-url.com/data-science-bootcamp.jpg" alt="Data Science Bootcamp">
+                                <h5>Data Science Bootcamp</h5>
+                                <p>upGrad</p>
+                                <a href="#" class="btn btn-danger">View Program</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="program-card">
+                                <img src="https://your-image-source-url.com/cloud-computing-devops.jpg" alt="Cloud Computing & DevOps Program">
+                                <h5>Cloud Computing & DevOps Program</h5>
+                                <p>Institute of Technology</p>
+                                <a href="#" class="btn btn-danger">View Program</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more carousel items if needed -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#programsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#programsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Real Stories, <span class="highlight">Incredible Journeys</span></h1>
+            <p>Swipe to find learners like you, or speak to a career expert and get started today.</p>
+        </div>
+        <div class="statistics">
+            <div class="stat">
+                <h2>2023-2024</h2>
+            </div>
+            <div class="stat">
+                <h2>55000+</h2>
+                <p>Career Transitions</p>
+            </div>
+            <div class="stat">
+                <h2>80%+</h2>
+                <p>Program Completion Rate</p>
+            </div>
+            <div class="stat">
+                <h2>3000</h2>
+                <p>Companies Hired</p>
+            </div>
+        </div>
+        <div class="journey">
+            <div class="before">
+                <div class="logo">
+                    <img src="johnson_matthey_logo.png" alt="Johnson Matthey">
+                </div>
+                <p>Technical Service Engineer</p>
+            </div>
+            <div class="upgrad">
+                <img src="upgrad_logo.png" alt="upGrad">
+                <img src="kushagra_saxena.png" alt="Kushagra Saxena">
+                <p>120% Hike</p>
+            </div>
+            <div class="after">
+                <div class="logo">
+                    <img src="c3_ai_logo.png" alt="C3.ai">
+                </div>
+                <p>AI Solution Consultant</p>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
