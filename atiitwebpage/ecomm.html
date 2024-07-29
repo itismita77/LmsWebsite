@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dress Collection</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .product-card {
+        margin-bottom: 30px;
+    }
+
+    .product-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .save-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(255, 69, 0, 0.8);
+        color: #fff;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .product-info {
+        padding: 10px;
+        text-align: center;
+    }
+
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.header {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__inline-navigation,
+.header__secondary-links {
+    display: flex;
+    align-items: center;
+}
+
+.header__icon-list {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header__icon-wrapper {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header__logo {
+    text-align: center;
+}
+
+.header__logo-image {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Keeps the aspect ratio */
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.hidden-desk {
+    display: none;
+}
+
+.hidden-phone {
+    display: none;
+}
+
+.hidden-pocket {
+    display: none;
+}
+
+.hidden-lap {
+    display: none;
+}
+
+.header__cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header--bordered {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .hidden-phone {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 992px) {
+    .hidden-pocket,
+    .hidden-lap {
+        display: inline-block;
+    }
+
+    .hidden-desk {
+        display: none;
+    }
+}
+       .section {
+            padding-top: 50px;
+            padding-bottom: 0px;
+            display: block;
+        }
+
+        .collection-background-image {
+            background-color: #f8f9fa; /* Example background color */
+            padding: 40px 0;
+        }
+
+        .second-sec-collection-list-title {
+            margin-top: 0px;
+        }
+        .rating__stars .fa-star {
+        color: rgb(245 163 40);
+        }
+        .product-card {
+            margin-bottom: 30px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .save-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 69, 0, 0.8);
+            color: #fff;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .product-info {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .rating {
+            color: #f1c40f;
+        }
+        .icon {
+      fill: currentColor;
+      vertical-align: middle;
+    }
+    .social-media__link {
+      color: #000; /* Adjust color if needed */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    
+    
+</style>
+
+   
+    
+
+
+    <body>
+        <header class="header header--bordered" role="banner">
+            <div class="container">
+                <div class="header__wrapper">
+                    <!-- LEFT PART -->
+                    <nav class="header__inline-navigation" role="navigation">
+                        <div class="header__icon-list">
+                            <button class="header__icon-wrapper tap-area" aria-controls="mobile-menu-drawer" aria-expanded="false">
+                                <span class="visually-hidden">Navigation</span>
+                                <svg focusable="false" width="18" height="14" class="icon icon--header-hamburger" viewBox="0 0 18 14">
+                                    <path d="M0 1h18M0 13h18H0zm0-6h18H0z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                                </svg>
+                            </button>
+                            <a href="/search" class="header__icon-wrapper tap-area hidden-desk" aria-controls="search-drawer" aria-expanded="false" aria-label="Search">
+                                <svg focusable="false" width="18" height="18" class="icon icon--header-search" viewBox="0 0 18 18">
+                                    <path d="M12.336 12.336c2.634-2.635 2.682-6.859.106-9.435-2.576-2.576-6.8-2.528-9.435.106C.373 5.642.325 9.866 2.901 12.442c2.576 2.576 6.8 2.528 9.435-.106zm0 0L17 17" fill="none" stroke="currentColor" stroke-width="2"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
+    
+                    <!-- LOGO PART -->
+                    <span class="header__logo">
+                        <a class="header__logo-link" href="/">
+                            <span class="visually-hidden">Stylley</span>
+                            <img class="header__logo-image" width="313" height="150" src="https://www.stylley.in/cdn/shop/files/Infinity_Mark_Stylley_330x.png?v=1691008130" alt="Stylley Logo">
+                        </a>
+                    </span>
+    
+                    <!-- SECONDARY LINKS PART -->
+                    <div class="header__secondary-links">
+                        <div class="header__icon-list">
+                            <button class="header__icon-wrapper tap-area hidden-phone" aria-controls="newsletter-popup" aria-expanded="false">
+                                <span class="visually-hidden">Newsletter</span>
+                                <svg focusable="false" width="20" height="16" class="icon icon--header-email" viewBox="0 0 20 16">
+                                    <path d="M19 4l-9 5-9-5" fill="none" stroke="currentColor" stroke-width="2"></path>
+                                    <path stroke="currentColor" fill="none" stroke-width="2" d="M1 1h18v14H1z"></path>
+                                </svg>
+                            </button>
+                            <a href="/search" class="header__icon-wrapper tap-area hidden-pocket hidden-lap" aria-label="Search" aria-controls="search-drawer" aria-expanded="false">
+                                <svg focusable="false" width="18" height="18" class="icon icon--header-search" viewBox="0 0 18 18">
+                                    <path d="M12.336 12.336c2.634-2.635 2.682-6.859.106-9.435-2.576-2.576-6.8-2.528-9.435.106C.373 5.642.325 9.866 2.901 12.442c2.576 2.576 6.8 2.528 9.435-.106zm0 0L17 17" fill="none" stroke="currentColor" stroke-width="2"></path>
+                                </svg>
+                            </a>
+                            <a href="/account/login" class="header__icon-wrapper tap-area hidden-phone" aria-label="Login">
+                                <svg focusable="false" width="18" height="17" class="icon icon--header-customer" viewBox="0 0 18 17">
+                                    <circle cx="9" cy="5" r="4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></circle>
+                                    <path d="M1 17v0a4 4 0 014-4h8a4 4 0 014 4v0" fill="none" stroke="currentColor" stroke-width="2"></path>
+                                </svg>
+                            </a>
+                            <a href="/cart" class="header__icon-wrapper tap-area" aria-label="Cart" aria-controls="mini-cart" aria-expanded="false">
+                                <svg focusable="false" width="20" height="18" class="icon icon--header-cart" viewBox="0 0 20 18">
+                                    <path d="M3 1h14l1 16H2L3 1z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                                    <path d="M7 4v0a3 3 0 003 3v0a3 3 0 003-3v0" fill="none" stroke="currentColor" stroke-width="2"></path>
+                                </svg>
+                                <span class="header__cart-count header__cart-count--floating bubble-count">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </header>
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="#">Home</a> / Lemonade Dream Dress
+            </nav>
+            <div class="product">
+                <div class="product-images" style="display: flex;">
+                    <div class="thumbnail-images">
+                        <img src="https://www.stylley.in/cdn/shop/files/6_26_72x.png?v=1711980012" alt="Thumbnail 1">
+                        <img src="https://www.stylley.in/cdn/shop/files/3_31_72x.png?v=1711980015" alt="Thumbnail 2">
+                        <img src="https://www.stylley.in/cdn/shop/files/7_28_72x.png?v=1711980014" alt="Thumbnail 3">
+                        <img src="https://www.stylley.in/cdn/shop/files/8_29_72x.png?v=1711980012" alt="Thumbnail 4">
+                        <img src="https://www.stylley.in/cdn/shop/files/9_26_72x.png?v=1711980013" alt="Thumbnail 5">
+                        <img src="https://www.stylley.in/cdn/shop/files/5_31_72x.png?v=1711980011" alt="Thumbnail 6">
+                        <img src="https://www.stylley.in/cdn/shop/files/2_31_72x.png?v=1711980016" alt="Thumbnail 7">
+                        <!-- Add more thumbnails as needed -->
+                    </div>
+                    <div class="main-image">
+                        <img src="https://www.stylley.in/cdn/shop/files/6_26_800x.png?v=1711980012" alt="Lemonade Dream Dress">
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h1>Lemonade Dream Dress</h1>
+                    <p class="price">
+                        <span class="original-price">Rs. 3,287.57</span>
+                        <span class="discounted-price">Rs. 1,899.00</span>
+                        <span class="discount">(Save 42%)</span>
+                    </p>
+                    <p>Tax included. <a href="#">FAQs</a></p>
+                    <div class="reviews">
+                        <span>⭐️⭐️⭐️⭐️⭐️</span> <a href="#">1 review</a>
+                    </div>
+                    <div class="size-selector">
+                        <label for="size">Please Select a Size:</label>
+                        <div class="size-options">
+                            <button class="size-button">XS</button>
+                            <button class="size-button">S</button>
+                            <button class="size-button selected">M</button>
+                            <button class="size-button">L</button>
+                            <button class="size-button">XL</button>
+                            <button class="size-button">2XL</button>
+                            <button class="size-button">3XL</button>
+                            <button class="size-button">4XL</button>
+                            <button class="size-button">5XL</button>
+                            <button class="size-button">6XL</button>
+                            <button class="size-button">7XL</button>
+                        </div>
+                        <a href="#" class="size-chart">Size Chart</a>
+                    </div>
+                    <div class="quantity-selector">
+                        <label for="quantity">Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-button" id="decrease">-</button>
+                            <input type="number" id="quantity" value="1" min="1">
+                            <button class="quantity-button" id="increase">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-boutique-fit">Boutique Fit</button>
+                    <div class="special-offers">
+                        <p>RAKHI SPECIAL OFFERS</p>
+                    </div>
+                    <div class="purchase-buttons">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <button class="btn buy-now">Buy it Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+        <script src="script.js"></script>
+        <!-- <div class="row">
+            <div class="col-12 d-flex justify-content-between mb-3">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-link">Show filters</button>
+                    <span class="ml-2">13 products</span>
+                </div>
+                <div>
+                    <label for="sort" class="mr-2">Sort by</label>
+                    <select id="sort">
+                        <option>Best selling</option>
+                        <option>Featured</option>
+                        <option>Alphabetically A-Z</option>
+                        <option>Alphabetically Z-A</option>
+                        <option>Price low to high</option>
+                        <option>Price high to low</option>
+                        <option>Date old to new</option>
+                        <option>Date new to old</option>
+                    </select>
+                </div>  
+            </div>
+            
+        </div> -->
+        
+        <!-- <div class="row">
+         
+            <div class="col-md-3 product-card">
+                <div class="position-relative">
+                    <span class="save-badge">SAVE 30%</span>
+                    <img src="https://www.stylley.in/cdn/shop/files/6_22_700x.png?v=1711020530" alt="Scarlet Seduction Dress">
+                </div>
+                
+                <div class="product-info">
+                    <p>Lemonade Dream Dress</p>
+                </div>        
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <span class="price price--highlight text-danger">
+                                <span class="visually-hidden">Sale price</span>
+                                Rs. 2,199.00
+                            </span>
+                            <span class="price price--compare text-muted ml-2">
+                                <span class="visually-hidden">Regular price</span>
+                                <del>Rs. 3,144.57</del>
+                            </span>
+                        </div>
+                    </div>
+                    <a class="product d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="rating d-flex align-items-center">
+                            <div class="rating__stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                            <span class="rating__caption ml-2">4 reviews</span>
+                        </div>
+                    </a>                     
+                </div>                
+            </div>
+           
+            <div class="col-md-3 product-card">
+                <div class="position-relative">
+                    <span class="save-badge">SAVE 30%</span>
+                    <img src="https://www.stylley.in/cdn/shop/files/3_31_400x.png?v=1711980015" alt="Lemonade Dream Dress">
+                </div>
+                <div class="product-info">
+                    <p>Lemonade Dream Dress</p>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <span class="price price--highlight text-danger">
+                                <span class="visually-hidden">Sale price</span>
+                                Rs. 2,199.00
+                            </span>
+                            <span class="price price--compare text-muted ml-2">
+                                <span class="visually-hidden">Regular price</span>
+                                <del>Rs. 3,144.57</del>
+                            </span>
+                        </div>
+                    </div>
+                    <a class="product d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="rating d-flex align-items-center">
+                            <div class="rating__stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                            <span class="rating__caption ml-2">4 reviews</span>
+                        </div>
+                    </a>                     
+                </div>   
+            </div>
+           
+            <div class="col-md-3 product-card">
+                <div class="position-relative">
+                    <span class="save-badge">SAVE 30%</span>
+                    <img src="https://www.stylley.in/cdn/shop/files/Untitleddesign_83_700x.png?v=1696414831" alt="Prachi Jain Featuring in Nightsky Dust">
+                </div>
+                <div class="product-info">
+                    <p>Prachi Featuring in Nightsky Dust</p>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <span class="price price--highlight text-danger">
+                                <span class="visually-hidden">Sale price</span>
+                                Rs. 2,199.00
+                            </span>
+                            <span class="price price--compare text-muted ml-2">
+                                <span class="visually-hidden">Regular price</span>
+                                <del>Rs. 3,144.57</del>
+                            </span>
+                        </div>
+                    </div>
+                    <a class="product d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="rating d-flex align-items-center">
+                            <div class="rating__stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                            <span class="rating__caption ml-2">4 reviews</span>
+                        </div>
+                    </a>                     
+                </div>   
+            </div>
+         
+            <div class="col-md-3 product-card">
+                <div class="position-relative">
+                    <span class="save-badge">SAVE 30%</span>
+                    <img src="https://www.stylley.in/cdn/shop/files/IMG_1940-01_400x.jpg?v=1708083816" alt="Red Dress">
+                </div>
+                <div class="product-info">
+                    <p>Red Dress</p>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <span class="price price--highlight text-danger">
+                                <span class="visually-hidden">Sale price</span>
+                                Rs. 2,199.00
+                            </span>
+                            <span class="price price--compare text-muted ml-2">
+                                <span class="visually-hidden">Regular price</span>
+                                <del>Rs. 3,144.57</del>
+                            </span>
+                        </div>
+                    </div>
+                    <a class="product d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="rating d-flex align-items-center">
+                            <div class="rating__stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                            <span class="rating__caption ml-2">4 reviews</span>
+                        </div>
+                    </a>                     
+                </div>   
+            </div>
+        </div> -->
+        <!-- <div class="container">
+            <div class="row">
+            
+                <div class="col-md-3 product-card">
+                    <div class="position-relative">
+                        <span class="save-badge">SAVE 30%</span>
+                        <img src="https://www.stylley.in/cdn/shop/files/Untitleddesign_72_6b3a7d50-4d73-416a-a5d0-d6e030a6e398_400x.png?v=1707496345" alt="Neha Kalia Featuring In Olive Garden Dress">
+                    </div>
+                    <div class="product-info">
+                        <p>Neha Kalia Featuring In Olive Garden Dress</p>
+                        <p><span class="price">Rs. 2,009.00</span> <span class="old-price">Rs. 2,872.87</span></p>
+                        <div class="rating">
+                            <span>★★★★★</span> No reviews
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="col-md-3 product-card">
+                    <div class="position-relative">
+                        <span class="save-badge">SAVE 30%</span>
+                        <img src="https://www.stylley.in/cdn/shop/files/IMG_2304_1_-1_400x.jpg?v=1707496398" alt="Forest Fern Dress">
+                    </div>
+                    <div class="product-info">
+                        <p>Forest Fern Dress</p>
+                        <p><span class="price">Rs. 2,099.00</span> <span class="old-price">Rs. 3,001.57</span></p>
+                        <div class="rating">
+                            <span>★★★★★</span> No reviews
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-md-3 product-card">
+                    <div class="position-relative">
+                        <span class="save-badge">SAVE 30%</span>
+                        <img src="https://www.stylley.in/cdn/shop/files/IMG_4229_400x.jpg?v=1708083776" alt="Olive Garden Dress">
+                    </div>
+                    <div class="product-info">
+                        <p>Olive Garden Dress</p>
+                        <p><span class="price">Rs. 2,009.00</span> <span class="old-price">Rs. 2,872.87</span></p>
+                        <div class="rating">
+                            <span>★★★★★</span> No reviews
+                        </div>
+                    </div>
+                </div>
+          
+                <div class="col-md-3 product-card">
+                    <div class="position-relative">
+                        <img src="https://www.stylley.in/cdn/shop/files/11_1_27af4f8c-1d23-42a2-abae-9f32005480d5_400x.png?v=1721712246" alt="Concrete Catwalk Dress">
+                    </div>
+                    <div class="product-info">
+                        <p>Concrete Catwalk Dress</p>
+                        <p><span class="price">Rs. 2,299.00</span></p>
+                        <div class="rating">
+                            <span>★★★★★</span> No reviews
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <footer class="footer bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Newsletter Section -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-uppercase mb-3">
+                    <span class="text-warning">S</span><em>ubscribe</em> to get the <span class="text-warning">l</span><em>atest</em> updates
+                    </h5>
+                    <form method="post" action="/contact#footer-newsletter" id="footer-newsletter" accept-charset="UTF-8" class="d-flex">
+                    <input type="hidden" name="form_type" value="customer">
+                    <input type="hidden" name="utf8" value="✓">
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                    <div class="input-group">
+                        <input type="email" id="footer[contact][email]" name="contact[email]" class="form-control" placeholder="Your e-mail" required>
+                        <button type="submit" class="btn btn-warning">
+                        <svg focusable="false" width="17" height="14" class="icon icon--nav-arrow-right" viewBox="0 0 17 14">
+                            <path d="M0 7h15M9 1l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"></path>
+                        </svg>
+                        </button>
+                    </div>
+                    </form>
+                </div>
+
+                <!-- Links Section -->
+                <div class="col-lg-2 mb-4">
+                    <h5 class="text-uppercase">Stylley</h5>
+                    <hr class="bg-warning mb-3">
+                    <ul class="list-unstyled">
+                    <li><a href="/" class="text-light">Home</a></li>
+                    <li><a href="/pages/about-us" class="text-light">About</a></li>
+                    <li><a href="/pages/contact" class="text-light">Contact</a></li>
+                    <li><a href="/blogs/news" class="text-light">Blogs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="col-lg-2 mb-4">
+                    <h5 class="text-uppercase">Quick Links</h5>
+                    <hr class="bg-warning mb-3">
+                    <ul class="list-unstyled">
+                    <li><a href="https://stylleyindia.shiprocket.co/tracking" class="text-light">Track Order</a></li>
+                    <li><a href="/pages/faqs" class="text-light">FAQs</a></li>
+                    <li><a href="/pages/exchange-return-policy" class="text-light">Return & Exchanges</a></li>
+                    <li><a href="/pages/shipping-policy" class="text-light">Shipping Policy</a></li>
+                    <li><a href="/pages/terms-of-service" class="text-light">Terms of Service</a></li>
+                    <li><a href="/pages/refund-policy" class="text-light">Refund Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us Section -->
+                <div class="col-lg-2 mb-4">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <hr class="bg-warning mb-3">
+                    <p><strong>Address:</strong> 77/3 Golden Green Park, Lane No. 4, Bareilly 243006, Uttar Pradesh, India</p>
+                    <p><strong>Email:</strong> <a href="mailto:help@stylley.in" class="text-light">help@stylley.in</a></p>
+                    <p>WhatsApp / Call: <a href="tel:+919548695374" class="text-light">+919548695374</a><br>Availability: 10:00 AM to 7:00 PM (Mon to Sat)</p>
+                </div>
+
+                <!-- Social Media Section -->
+                
+                    <div class="col-lg-2 mb-4">
+                        <h5 class="text-uppercase">Follow us</h5>
+                        <hr class="bg-warning mb-3">
+                        <ul class="d-flex list-unstyled gap-3">
+                            <li class="social-media__item">
+                            <a href="https://www.facebook.com/StylleyIndia" target="_blank" rel="noopener" class="social-media__link" aria-label="Follow us on Facebook">
+                                <svg width="24" height="24" class="icon" viewBox="0 0 9 17">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.486 16.2084L2.486 8.81845H0L0 5.93845L2.486 5.93845L2.486 3.81845C2.38483 2.79982 2.73793 1.78841 3.45107 1.05407C4.16421 0.319722 5.16485 -0.0628415 6.186 0.00844868C6.9284 0.00408689 7.67039 0.0441585 8.408 0.128449V2.69845L6.883 2.69845C6.4898 2.61523 6.08104 2.73438 5.79414 3.01585C5.50724 3.29732 5.3803 3.70373 5.456 4.09845L5.456 5.93845H8.308L7.936 8.81845H5.46L5.46 16.2084H2.486Z" fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            </li>
+                            <li class="social-media__item">
+                            <a href="https://www.instagram.com/stylleyindiaofficial/" target="_blank" rel="noopener" class="social-media__link" aria-label="Follow us on Instagram">
+                                <svg width="24" height="24" class="icon" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C5.827 0 5.555.01 4.702.048 3.85.087 3.269.222 2.76.42a3.921 3.921 0 00-1.417.923c-.445.444-.719.89-.923 1.417-.198.509-.333 1.09-.372 1.942C.01 5.555 0 5.827 0 8s.01 2.445.048 3.298c.039.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.719 1.417.923.509.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.445-.01 3.298-.048c.852-.039 1.433-.174 1.942-.372a3.922 3.922 0 001.417-.923c.445-.444.719-.89.923-1.417.198-.509.333-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.298c-.039-.852-.174-1.433-.372-1.942a3.922 3.922 0 00-.923-1.417A3.921 3.921 0 0013.24.42c-.509-.198-1.09-.333-1.942-.372C10.445.01 10.173 0 8 0zm0 1.441c2.136 0 2.39.009 3.233.047.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.009 2.39-.047 3.233c-.036.78-.166 1.203-.276 1.485-.145.374-.318.64-.598.92-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.844.038-1.097.047-3.233.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.479 2.479 0 01-.92-.598 2.478 2.478 0 01-.598-.92c-.11-.282-.24-.705-.276-1.485-.038-.844-.047-1.097-.047-3.233s.009-2.39.047-3.233c.036-.78.166-1.203.276-1.485.145-.374.318-.64.598-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.844-.038 1.097-.047 3.233-.047zm0 9.226a2.667 2.667 0 110-5.334 2.667 2.667 0 010 5.334zm0-6.775a4.108 4.108 0 100 8.216 4.108 4.108 0 000-8.216zm5.23-.162a.96.96 0 11-1.92 0 .96.96 0 011.92 0z" fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            </li>
+                        </ul>
+                    </div>                 
+            </div>
+        </div>
+    </footer>
+    
+           
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const sizeButtons = document.querySelectorAll('.size-button');
+    const quantityInput = document.getElementById('quantity');
+    const increaseButton = document.getElementById('increase');
+    const decreaseButton = document.getElementById('decrease');
+
+    // Size selection
+    sizeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            sizeButtons.forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+
+    // Quantity controls
+    increaseButton.addEventListener('click', function() {
+        quantityInput.value = parseInt(quantityInput.value) + 1;
+    });
+
+    decreaseButton.addEventListener('click', function() {
+        if (quantityInput.value > 1) {
+            quantityInput.value = parseInt(quantityInput.value) - 1;
+        }
+    });
+});
+
+</script>
